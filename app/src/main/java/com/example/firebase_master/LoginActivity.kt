@@ -7,6 +7,8 @@ import org.jetbrains.anko.toast
 
 class LoginActivity : AppCompatActivity() {
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -15,7 +17,7 @@ class LoginActivity : AppCompatActivity() {
         buttonListener()
     }
 
-    fun init(){
+    fun init() {
 
     }
 

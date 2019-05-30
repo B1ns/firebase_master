@@ -35,4 +35,11 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
     // Anko
     implementation "org.jetbrains.anko:anko:$anko_version"
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    // Firebase
+    implementation 'com.google.firebase:firebase-core:16.0.9'
+    implementation 'com.google.firebase:firebase-auth:17.0.0'
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
 }
+apply plugin: 'com.google.gms.google-services'
