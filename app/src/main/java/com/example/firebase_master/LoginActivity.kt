@@ -1,20 +1,24 @@
 package com.example.firebase_master
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.toast
 
 class LoginActivity : AppCompatActivity() {
 
-
+    private lateinit var auth : FirebaseAuth
+    private lateinit var googleSignInClient: GoogleSignInClient
+    private val GOOGLE_LOGIN_CODE = 9001
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
         init()
-        buttonListener()
     }
 
     fun init() {
@@ -42,5 +46,9 @@ class LoginActivity : AppCompatActivity() {
         twitterLogin.setOnClickListener {
 
         }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
     }
 }

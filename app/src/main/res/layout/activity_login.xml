@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -22,10 +22,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="30dp"
-        android:hint="@string/email"
-        app:endIconContentDescription="@string/custom_content_desc"
-        app:endIconDrawable="@drawable/custom_icon"
-        app:endIconMode="custom">
+        android:hint="@string/email">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email"
@@ -40,16 +37,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:hint="@string/password"
-        app:endIconContentDescription="@string/custom_content_desc"
-        app:endIconDrawable="@drawable/custom_icon"
-        app:endIconMode="custom">
+        android:hint="@string/password">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
-            android:inputType="textPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -63,52 +57,75 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:text="로그인"
-        android:textSize="6pt"
-        app:backgroundTint="@android:color/black" />
+        android:textSize="6pt" />
 
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:orientation="vertical"
         android:weightSum="300">
 
-        <Button
+        <ImageButton
             android:id="@+id/facebookLogin"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="40dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_weight="70"
             android:background="@drawable/btn_signin_facebook"
-            android:text="@string/signin_facebook"
-            android:textColor="@color/colorWhite" />
+            app:layout_constraintBottom_toTopOf="@+id/googleLogin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
+        <ImageButton
             android:id="@+id/googleLogin"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="40dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_weight="70"
             android:background="@drawable/btn_signin_google"
-            android:text="@string/signin_google"
-            android:textColor="@color/colorWhite" />
+            app:layout_constraintBottom_toTopOf="@+id/twitterLogin"
+            app:layout_constraintTop_toBottomOf="@+id/facebookLogin" />
 
-        <Button
+        <ImageButton
             android:id="@+id/twitterLogin"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="40dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_weight="70"
             android:background="@drawable/btn_signin_twitter"
-            android:text="Twitter Login"
-            android:textColor="@color/colorWhite" />
-    </LinearLayout>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/googleLogin" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="30dp"
+            android:text="아직도 회원이 아니신가요 ?" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/register"
+            android:padding="5dp"
+            android:text="회원가입"
+            android:textColor="@android:color/holo_blue_light"/>
+
+    </LinearLayout>
 </LinearLayout>
