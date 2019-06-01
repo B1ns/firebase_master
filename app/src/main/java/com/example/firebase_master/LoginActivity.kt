@@ -37,7 +37,6 @@ class LoginActivity : AppCompatActivity() {
 
         buttonListener()
 
-        printHashKey()
     }
 
     fun init() {
